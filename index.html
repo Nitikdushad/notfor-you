@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .dancing-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .heart {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .photo-container {
+            perspective: 1000px;
+        }
+        
+        .photo {
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .photo:hover {
+            transform: scale(1.05) rotateY(10deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .delayed-1 { animation-delay: 0.3s; }
+        .delayed-2 { animation-delay: 0.6s; }
+        .delayed-3 { animation-delay: 0.9s; }
+        
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            animation: confetti-fall 5s linear infinite;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Birthday Header -->
+        <div class="text-center mb-12 fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold text-pink-600 dancing-font mb-4">
+                Happy Birthday <span class="heart text-red-500">❤️</span> My Love Sapna
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700">
+                Wishing you the most amazing day filled with love and joy!
+            </p>
+        </div>
+        
+        <!-- Photo Gallery - 4 photos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            <div class="photo-container">
+                <div class="photo rounded-xl overflow-hidden floating">
+                    <img src="IMG-20240927-WA0045.jpg" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-center mt-2 text-gray-600">Your beautiful smile lights up my world</p>
+            </div>
+            
+            <div class="photo-container">
+                <div class="photo rounded-xl overflow-hidden floating delayed-1">
+                    <img src="IMG_20241113_170938_171.jpg"  class="w-full h-full object-cover" />
+                </div>
+                <p class="text-center mt-2 text-gray-600">Every moment with you is special</p>
+            </div>
+            
+            <div class="photo-container">
+                <div class="photo rounded-xl overflow-hidden floating delayed-2">
+                    <img src="1000077889.jpg"  class="w-full h-full object-cover" />
+                </div>
+                <p class="text-center mt-2 text-gray-600">Your laughter is my favorite melody</p>
+            </div>
+            
+            <div class="photo-container">
+                <div class="photo rounded-xl overflow-hidden floating delayed-3">
+                    <img src="IMG-20241230-WA0045.jpg"  class="w-full h-full object-cover" />
+                </div>
+                <p class="text-center mt-2 text-gray-600">Our love grows stronger every day</p>
+            </div>
+        </div>
+        
+        <!-- Birthday Message -->
+        <div class="bg-white rounded-xl shadow-xl p-8 mb-12 transform transition-all duration-500 hover:scale-105">
+            <div class="prose max-w-none">
+                <h2 class="text-2xl md:text-3xl font-bold text-pink-600 mb-4">My Dearest Love,</h2>
+                <p class="text-lg md:text-xl mb-4">
+                    On this special day, I want you to know how much you mean to me. You are the light of my life, my best friend, and my greatest love. 
+                </p>
+                <p class="text-lg md:text-xl mb-4">
+                    Every day I wake up grateful to have you in my life. Your kindness, your beauty (inside and out), and your wonderful spirit make every moment unforgettable.
+                </p>
+                <p class="text-lg md:text-xl mb-4">
+                    May this birthday bring you all the happiness, love, and fulfillment you deserve. I promise to make this year the best one yet for you!
+                </p>
+                <p class="text-2xl md:text-3xl font-bold text-pink-600 dancing-font mt-6">
+                    Forever Yours <span class="heart text-red-500">❤️ Sapna</span>
+                </p>
+            </div>
+        </div>
+        
+        <!-- Interactive Element -->
+        <div class="text-center">
+            <button onclick="launchConfetti()" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg transform transition-all duration-300 hover:scale-110">
+                Click for Birthday Magic!
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Confetti effect
+        function launchConfetti() {
+            const colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
+            
+            for (let i = 0; i < 150; i++) {
+                createConfetti(colors);
+            }
+            
+            // Play a sound (optional)
+            const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-party-horn-618.mp3');
+            audio.play().catch(e => console.log("Audio playback failed:", e));
+            
+            // Animate the button
+            const button = document.querySelector('button');
+            button.classList.add('animate-ping');
+            setTimeout(() => {
+                button.classList.remove('animate-ping');
+            }, 1000);
+        }
+        
+        function createConfetti(colors) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            
+            // Random properties
+            const size = Math.random() * 10 + 5;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const left = Math.random() * window.innerWidth;
+            const animationDuration = Math.random() * 3 + 2;
+            
+            // Apply styles
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size}px`;
+            confetti.style.backgroundColor = color;
+            confetti.style.left = `${left}px`;
+            confetti.style.animationDuration = `${animationDuration}s`;
+            
+            document.body.appendChild(confetti);
+            
+            // Remove after animation
+            setTimeout(() => {
+                confetti.remove();
+            }, animationDuration * 1000);
+        }
+        
+        // Additional animations when scrolling
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.photo, .photo-container');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        });
+        
+        // Initial fade-in for all elements
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelectorAll('*').forEach(el => {
+                    el.classList.add('opacity-100');
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+
